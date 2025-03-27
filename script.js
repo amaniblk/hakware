@@ -1,12 +1,12 @@
+//chof yns ana w lyna ma3rafnach lhna w mana3arfouch js sayina m3a videos f yt mais walo alors darna haka w 9ad masiyina n5alto fih bach nafahmo maywalich yamchi
 async function getPrayerTimes() {
-    const city = "Algiers";  // Fixed city
-    const country = "Algeria"; // Fixed country
-    const method = 2; // Calculation method (ISNA)
+    const city = "Algiers";  
+    const country = "Algeria"; 
+    const method = 2; 
 
     try {
         const response = await fetch(`https://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=${method}`);
-        const data = await response.json();
-
+       const data = await response.json();
         if (data.code === 200) {
             const timings = data.data.timings;
             const prayerTimes = {
@@ -60,7 +60,7 @@ function startCountdown(prayerTimes) {
 
         if (diff <= 0) {
             clearInterval(timer);
-            getPrayerTimes(); // Refresh prayer times when countdown reaches 0
+            getPrayerTimes(); 
         }
     }
 
@@ -68,13 +68,12 @@ function startCountdown(prayerTimes) {
     let timer = setInterval(updateCountdown, 1000);
 }
 
-// Load prayer times when the page loads
 getPrayerTimes();
 {
     async function getPrayerTimes() {
-        const city = "Algiers";  // Fixed city
-        const country = "Algeria"; // Fixed country
-        const method = 2; // Calculation method (ISNA)
+        const city = "Algiers";  
+        const country = "Algeria"; 
+        const method = 2; 
     
         try {
             const response = await fetch(`https://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=${method}`);
@@ -133,7 +132,7 @@ getPrayerTimes();
     
             if (diff <= 0) {
                 clearInterval(timer);
-                getPrayerTimes(); // Refresh prayer times when countdown reaches 0
+                getPrayerTimes(); 
             }
         }
     
@@ -141,6 +140,5 @@ getPrayerTimes();
         let timer = setInterval(updateCountdown, 1000);
     }
     
-    // Load prayer times when the page loads
     getPrayerTimes();
     }  
